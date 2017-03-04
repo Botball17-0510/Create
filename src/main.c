@@ -15,14 +15,16 @@
  * Initialise create and servos
  */
 void init() {
+	// TODO Add light activate
+	// TODO INIT SERVOS
 	create_connect();
-
 }
 
 /**
  * Deinitialize create and servos
  */
 void dinit() {
+	// TODO DINIT SERVOS
 	create_disconnect();
 }
 
