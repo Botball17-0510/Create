@@ -5,6 +5,10 @@
 ///////////////////////////////////////////////////////////////
 
 #include <kipr/botball.h>
+//#include <stdio.h>
+//#include <time.h>
+//#include <stdint.h>
+//#include "debug.h"
 #include "exmove.h"
 
 /**
