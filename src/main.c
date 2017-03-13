@@ -10,6 +10,8 @@
 //#include <stdint.h>
 //#include "debug.h"
 #include "exmove.h"
+#include "initialDrive.h"
+#include "farmHayBales.h"
 
 /**
  * Initialise create and servos
@@ -33,7 +35,8 @@ void dinit() {
 
 int main() {
 	init();
-
+	initialDrive();
+	farmHayBales();
 	dinit();
 	return 0;
 }
