@@ -2,6 +2,7 @@
 // exmove.c                                                  //
 // Created by Zachary Mayhew                                 //
 // For use by botball team 17-0510                           //
+// Use for basic functions                                   //
 ///////////////////////////////////////////////////////////////
 
 #ifndef EXMOVE_H
@@ -16,23 +17,34 @@
 #define DIAMETER 25.0f
 #define CIRCUMFERENCE DIAMETER*PI
 
-// go straight a certain distance TODO Make it more accurate
-void straight_distance(int mm, int speed) {
-	create_drive_straight(speed);
-	msleep((mm/speed)*1000);
-	create_stop();
-}
 
-// turn x # of degrees left/right at speed TODO make it work properly- doesnt work yet
-void rotate(float degrees, int direction, int speed) {
-	if (direction == LEFT) {
-		create_drive_direct(speed, -speed);
-	} else {
-		create_drive_direct(-speed, speed);
-	}
-	float mm = degrees/360.0f*CIRCUMFERENCE;
-	msleep((mm/speed)*1000);
-	create_stop();
-}
+#define ARM_SERVO 1
+#define CLAW_SERVO 0
+
+#define CLAW_CLOSED 950
+#define CLAW_OPEN 450
+
+#define ARM_DOWN 2000
+#define ARM_UP 200
+
+/**
+ * Moves the servo to a given position, taking a given amount of seconds
+ *
+ * @param (int) servo Id of the servo to move, between 0 and 3
+ * @param (int) goal Position of the servo to move to, between 0 and 2047
+ * @param (float) ms The amount of time to take to move to the position
+ */
+void slowServo(int servo, int goal, float ms);
+
+void claw(int v);
+
+void arm(int v);
+
+void pickUpObject();
+
+void straight_distance(int mm, int speed);
+
+// DEPRECATED ON VERSION THE FIRST ONE DOENT WORK FIX IT BEFORE USEING
+void rotate(float degrees, int direction, int speed);
 
 #endif
