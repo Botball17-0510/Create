@@ -12,13 +12,14 @@
 #include "exmove.h"
 #include "initialDrive.h"
 #include "farmHayBales.h"
+#include "blueCow.h"
 
 /**
  * Initialise create and servos
  */
 void init() {
 	// TODO Add light activate
-	// create_connect();
+	create_connect();
 	// light here
 	enable_servo(ARM_SERVO);
 	enable_servo(CLAW_SERVO);
@@ -30,13 +31,14 @@ void init() {
 void dinit() {
 	disable_servo(ARM_SERVO);
 	disable_servo(CLAW_SERVO);
-	//create_disconnect();
+	create_disconnect();
 }
 
 int main() {
 	init();
 	initialDrive();
 	farmHayBales();
+	blueCow();
 	dinit();
 	return 0;
 }
