@@ -44,6 +44,8 @@ void pickUpObject();
 
 void straight_distance(int mm, int speed);
 
+void reverse_distance(int mm, int speed);
+
 // DEPRECATED ON VERSION THE FIRST ONE DOENT WORK FIX IT BEFORE USEING
 void rotate(float degrees, int direction, int speed);
 

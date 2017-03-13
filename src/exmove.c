@@ -44,6 +44,12 @@ void straight_distance(int mm, int speed) {
 	create_stop();
 }
 
+void reverse_distance(int mm, int speed) {
+	create_drive_straight(-speed);
+	msleep((mm/speed)*1000);
+	create_stop();
+}
+
 // Rotate by a given degree, in the given direction, at the given speed.
 void rotate(float degrees, int direction, int speed) {
     float time = CIRCUMFERENCE * degrees / 360.0 / speed; // time to spin in milli seconds
