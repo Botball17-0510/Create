@@ -44,14 +44,17 @@ void straight_distance(int mm, int speed) {
 	create_stop();
 }
 
-// turn x # of degrees left/right at speed TODO make it work properly- doesnt work yet
+// Rotate by a given degree, in the given direction, at the given speed.
 void rotate(float degrees, int direction, int speed) {
-	if (direction == LEFT) {
-		create_drive_direct(speed, -speed);
-	} else {
-		create_drive_direct(-speed, speed);
-	}
-	float mm = degrees/360.0f*CIRCUMFERENCE;
-	msleep((mm/speed)*1000);
-	create_stop();
+    float time = CIRCUMFERENCE * degrees / 360.0 / speed; // time to spin in milli seconds
+    //printf("time to spin: %f\n",time);
+    if (direction == LEFT) {
+        create_spin_CCW(speed);
+        //printf("spinning left\n");
+    } else {
+        create_spin_CW(speed);
+    }
+    //printf("sleep %f seconds\n", time);
+    msleep(time*1000);
+    create_stop();    
 }

@@ -18,12 +18,15 @@
  * Initialise create and servos
  */
 void init() {
-	// TODO Add light activate
-	create_connect();
-	// light here
-	enable_servo(ARM_SERVO);
-	enable_servo(CLAW_SERVO);
+    // TODO Add light activate
+    create_connect();
+    msleep(1500);
+    create_start();
+    // light here
+    enable_servo(ARM_SERVO);
+    enable_servo(CLAW_SERVO);
 }
+
 
 /**
  * Deinitialize create and servos

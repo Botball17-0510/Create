@@ -14,7 +14,7 @@
 #define PI 3.141592f
 
 // distance between the two wheels
-#define DIAMETER 25.0f
+#define DIAMETER 249.0
 #define CIRCUMFERENCE DIAMETER*PI
 
 
