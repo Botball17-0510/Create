@@ -18,6 +18,7 @@ int create_connect();
 int create_disconnect();
 int printf(const char * a, ...);
 void create_drive_straight(int x);
+void create_start();
 void create_stop();
 void create_drive_direct(int x, int y);
 void create_spin_CCW(int speed);
