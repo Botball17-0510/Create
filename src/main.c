@@ -3,12 +3,11 @@
 // Created by Zachary Mayhew                                 //
 // For use by botball team 17-0510                           //
 ///////////////////////////////////////////////////////////////
-
+#ifdef __GNUC__
+#include "kipr/botball.h"
+#else
 #include <kipr/botball.h>
-//#include <stdio.h>
-//#include <time.h>
-//#include <stdint.h>
-//#include "debug.h"
+#endif
 #include "exmove.h"
 #include "initialDrive.h"
 #include "farmHayBales.h"
@@ -39,9 +38,18 @@ void dinit() {
 
 int main() {
 	init();
-	initialDrive();
-	farmHayBales();
-	blueCow();
+	printf("Press A for initialDrive");
+	printf("Press B for farmHayBales");
+	printf("Press C for blueCow");
+	if (a_button()) {
+		initialDrive();
+	}
+	else if (b_button()) {
+		farmHayBales();
+	}
+	else if (c_button()) {
+		blueCow();
+	}
 	dinit();
 	return 0;
 }

@@ -1,4 +1,10 @@
+#ifdef __GNUC__
+#include "kipr/botball.h"
+#else
+#include <kipr/botball.h>
+#endif
 #include "exmove.h"
+
 
 /**
  * Moves the servo to a given position, taking a given amount of seconds
@@ -10,7 +16,7 @@
 void slowServo(int servo, int goal, float ms) {
     int start = get_servo_position(servo);
    	float trueMs = ms/(goal-start);
-   	printf("%d", trueMs);
+   	printf("%f", trueMs);
   	int i = start;
    	for (; i < goal; i++) {
    		set_servo_position(servo, i);
