@@ -45,7 +45,7 @@ void pickUpObject() {
 // go straight a certain distance TODO Make it more accurate
 void straight_distance(int mm, int speed) {
 	create_drive_straight(speed);
-	msleep((mm/speed)*1000);
+	msleep((mm/speed) * 1000);
 	create_stop();
 }
 
@@ -67,8 +67,8 @@ void rotate(float degrees, int direction, int speed) {
         create_spin_CW(speed);
     }
     //printf("sleep %f seconds\n", time);
-    msleep(time*1000);
-    create_stop();
+    msleep(time * 1000);
+    create_stop();    
 }
 
 RobotPos newRobotPos(int x, int y) {
