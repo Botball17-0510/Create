@@ -6,13 +6,6 @@
 #include "exmove.h"
 
 
-/**
- * Moves the servo to a given position, taking a given amount of seconds
- *
- * @param (int) servo Id of the servo to move, between 0 and 3
- * @param (int) goal Position of the servo to move to, between 0 and 2047
- * @param (float) ms The amount of time to take to move to the position
- */
 void slowServo(int servo, int goal, float ms) {
     int start = get_servo_position(servo);
    	float trueMs = ms/(goal-start);
@@ -58,7 +51,7 @@ void reverse_distance(int mm, int speed) {
 
 // Rotate by a given degree, in the given direction, at the given speed.
 void rotate(float degrees, int direction, int speed) {
-    float time = CIRCUMFERENCE * degrees / 360.0 / speed; // time to spin in milli seconds
+    float time = CIRCUMFERENCE * (degrees / 360.0f) / speed; // time to spin in milli seconds
     //printf("time to spin: %f\n",time);
     if (direction == LEFT) {
         create_spin_CCW(speed);
@@ -68,5 +61,5 @@ void rotate(float degrees, int direction, int speed) {
     }
     //printf("sleep %f seconds\n", time);
     msleep(time*1000);
-    create_stop();    
+    create_stop();
 }

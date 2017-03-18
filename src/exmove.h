@@ -17,7 +17,6 @@
 #define DIAMETER 249.0
 #define CIRCUMFERENCE DIAMETER*PI
 
-
 #define ARM_SERVO 1
 #define CLAW_SERVO 0
 
