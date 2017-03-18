@@ -6,6 +6,9 @@
 #endif
 #include "exmove.h"
 
+/**
+ * Grabs the 3 haybales at the farm
+ */
 void farmHayBales() {
 
 }

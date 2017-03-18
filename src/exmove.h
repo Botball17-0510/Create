@@ -28,25 +28,50 @@
 #define ARM_UP 200
 
 /**
- * Moves the servo to a given position, taking a given amount of seconds
- *
- * @param (int) servo Id of the servo to move, between 0 and 3
- * @param (int) goal Position of the servo to move to, between 0 and 2047
- * @param (float) ms The amount of time to take to move to the position
+ * Moves the servo slowly
+ * @param servo servo port
+ * @param goal  goal for servo
+ * @param ms    time it should take
  */
 void slowServo(int servo, int goal, float ms);
 
+/**
+ * Sets the position of the claw
+ * @param v position
+ */
 void claw(int v);
 
+/**
+ * Sets the position of the arm
+ * @param v position
+ */
 void arm(int v);
 
+/**
+ * Picks up an object such as hay bale and puts it in the container
+ */
 void pickUpObject();
 
+/**
+ * Moves straight a distance
+ * @param mm    distance to be moved
+ * @param speed speed at which to move
+ */
 void straight_distance(int mm, int speed);
 
+/**
+ * Reverse a certain distance
+ * @param mm    Distance to be move
+ * @param speed speed to move
+ */
 void reverse_distance(int mm, int speed);
 
-// DEPRECATED ON VERSION THE FIRST ONE DOENT WORK FIX IT BEFORE USEING
+/**
+ * Rotates the entire robot to a position
+ * @param degrees   angle to move
+ * @param direction direction (left or right)
+ * @param speed     speed to move
+ */
 void rotate(float degrees, int direction, int speed);
 
 #endif

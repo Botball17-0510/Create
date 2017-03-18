@@ -3,7 +3,16 @@
 /* bunch of useless botball stuff, just defining them here so gcc won't complain */
 
 void mrp(int x, int y, int z);
+/**
+ * Sleep for a certain amount of tiem
+ * @param x [description]
+ */
 void msleep(int x);
+/**
+ * Sets position of servo
+ * @param x servo
+ * @param y position
+ */
 void set_servo_position(int x, int y);
 int get_servo_position(int x);
 void enable_servo(int x);
