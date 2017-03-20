@@ -83,6 +83,11 @@ RobotPos getRobotPos() {
 	return currentPos;
 }
 
+void updateRobotPos(int x, int y) {
+    currentPos.x += x;
+    currentPos.y += y;
+}
+
 void setRobotPos(RobotPos pos) {
 	currentPos = pos;
 }
@@ -94,3 +99,7 @@ void robotGoto(RobotPos pos) {
 void faceDirection(int direction) {
 	// TODO implement function
 }
+
+
+
+
