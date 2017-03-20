@@ -27,6 +27,19 @@
 #define ARM_UP 200
 
 /**
+ * Structure for robot position
+ */
+typedef struct {
+	float x;
+	float y;
+} RobotPos;
+
+/**
+ * Initializes the move library
+ */
+void init(int x, int y);
+
+/**
  * Moves the servo slowly
  * @param servo servo port
  * @param goal  goal for servo
@@ -79,5 +92,38 @@ void reverse_distance(int mm, int speed);
  * @author Bobby Wang
  */
 void rotate(float degrees, int direction, int speed);
+
+/**
+ * Creates a new RobotPos structure with starting x and y values
+ * @param  x Starting x pos
+ * @param  y Starting y pos
+ * @return   new robot pos structure
+ */
+RobotPos newRobotPos(int x, int y);
+
+/**
+ * Returns the current position of the robot
+ * @return the current position of the robot
+ */
+RobotPos getRobotPos();
+
+/**
+ * Sets the postition of the robot
+ * NOTE THIS WONT TAKE THE ROBOT TO THIS LOCATION
+ * @param pos position of the robot
+ */
+void setRobotPos(RobotPos pos);
+
+/**
+ * Goes to the specified position
+ * @param  pos target position
+ */
+void robotGoto(RobotPos pos);
+
+/**
+ * faces the robot in the specified direction
+ * @param direction [description]
+ */
+void faceDirection(int direction);
 
 #endif

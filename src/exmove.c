@@ -4,7 +4,13 @@
 #include <kipr/botball.h>
 #endif
 #include "exmove.h"
+#include "createDrive.h"
 
+RobotPos currentPos;
+
+void init(int x, int y) {
+	currentPos = newRobotPos(x, y);
+}
 
 void slowServo(int servo, int goal, float ms) {
     int start = get_servo_position(servo);
@@ -63,4 +69,27 @@ void rotate(float degrees, int direction, int speed) {
     //printf("sleep %f seconds\n", time);
     msleep(time*1000);
     create_stop();
+}
+
+RobotPos newRobotPos(int x, int y) {
+	RobotPos pos;
+	pos.x = x;
+	pos.y = y;
+	return pos;
+}
+
+RobotPos getRobotPos() {
+	return currentPos;
+}
+
+void setRobotPos(RobotPos pos) {
+	currentPos = pos;
+}
+
+void robotGoto(RobotPos pos) {
+	// TODO implement function
+}
+
+void faceDirection(int direction) {
+	// TODO implement function
 }
