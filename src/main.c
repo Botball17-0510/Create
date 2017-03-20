@@ -15,20 +15,22 @@
 
 /**
  * Initialise create and servos
+ * @author Zachary Mayhew
  */
 void init() {
-    // TODO Add light activate
-    create_connect();
-    msleep(1500);
-    create_start();
-    // light here
-    enable_servo(ARM_SERVO);
-    enable_servo(CLAW_SERVO);
+	// TODO Add light activate
+	create_connect();
+	msleep(1500);
+	create_start();
+	// light here
+	enable_servo(ARM_SERVO);
+	enable_servo(CLAW_SERVO);
 }
 
 
 /**
  * Deinitialize create and servos
+ * @author Zachary Mayhew
  */
 void dinit() {
 	disable_servo(ARM_SERVO);
@@ -36,20 +38,25 @@ void dinit() {
 	create_disconnect();
 }
 
+/**
+ * Main function
+ * @author Zachary Mayhew, Bobby Wang, Arjun
+ */
 int main() {
 	init();
-	printf("Press A for initialDrive");
-	printf("Press B for farmHayBales");
-	printf("Press C for blueCow");
-	if (a_button()) {
-		initialDrive();
-	}
-	else if (b_button()) {
-		farmHayBales();
-	}
-	else if (c_button()) {
-		blueCow();
-	}
+	// printf("Press A for initialDrive");
+	// printf("Press B for farmHayBales");
+	// printf("Press C for blueCow");
+	// if (a_button()) {
+	// 	initialDrive();
+	// }
+	// else if (b_button()) {
+	// 	farmHayBales();
+	// }
+	// else if (c_button()) {
+	// 	blueCow();
+	// }
+	farmHayBales();
 	dinit();
 	return 0;
 }

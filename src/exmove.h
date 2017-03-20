@@ -31,23 +31,27 @@
  * @param servo servo port
  * @param goal  goal for servo
  * @param ms    time it should take
+ * @author Zachary Mayhew
  */
 void slowServo(int servo, int goal, float ms);
 
 /**
  * Sets the position of the claw
  * @param v position
+ * @author Zachary Mayhew
  */
 void claw(int v);
 
 /**
  * Sets the position of the arm
  * @param v position
+ * @author Zachary Mayhew
  */
 void arm(int v);
 
 /**
  * Picks up an object such as hay bale and puts it in the container
+ * @author Zachary Mayhew
  */
 void pickUpObject();
 
@@ -55,6 +59,7 @@ void pickUpObject();
  * Moves straight a distance
  * @param mm    distance to be moved
  * @param speed speed at which to move
+ * @author Zachary Mayhew
  */
 void straight_distance(int mm, int speed);
 
@@ -62,6 +67,7 @@ void straight_distance(int mm, int speed);
  * Reverse a certain distance
  * @param mm    Distance to be move
  * @param speed speed to move
+ * @author Zachary Mayhew
  */
 void reverse_distance(int mm, int speed);
 
@@ -70,6 +76,7 @@ void reverse_distance(int mm, int speed);
  * @param degrees   angle to move
  * @param direction direction (left or right)
  * @param speed     speed to move
+ * @author Bobby Wang
  */
 void rotate(float degrees, int direction, int speed);
 
