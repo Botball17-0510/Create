@@ -8,7 +8,7 @@
 
 RobotPos currentPos;
 
-void init(int x, int y) {
+void initEx(int x, int y) {
 	currentPos = newRobotPos(x, y);
 }
 
@@ -58,17 +58,18 @@ void reverse_distance(int mm, int speed) {
 // Rotate by a given degree, in the given direction, at the given speed.
 // todo: make it more accurate
 void rotate(float degrees, int direction, int speed) {
-    float time = CIRCUMFERENCE * (degrees / 360.0f) / speed; // time to spin in milli seconds
     //printf("time to spin: %f\n",time);
     if (direction == LEFT) {
-        create_spin_CCW(speed);
-        //printf("spinning left\n");
+        create_left(degrees, 0, speed);
     } else {
-        create_spin_CW(speed);
+        create_right(degrees, 0, speed);
     }
+<<<<<<< HEAD
     //printf("sleep %f seconds\n", time);
     msleep(time * 1000);
     create_stop();    
+=======
+>>>>>>> Fixed intti function
 }
 
 RobotPos newRobotPos(int x, int y) {

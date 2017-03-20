@@ -51,7 +51,7 @@ typedef struct {
 /**
  * Initializes the move library
  */
-void init(int x, int y);
+void initEx(int x, int y);
 
 /**
  * Moves the servo slowly

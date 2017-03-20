@@ -12,6 +12,5 @@
  * Grabs the 3 haybales at the farm
  */
 void farmHayBales() {
-	
-
+	rotate(90, LEFT, SPEED);
 }

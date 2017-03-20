@@ -1,3 +1,11 @@
+#include "farmHayBales.h"
+#ifdef __GNUC__
+#include "kipr/botball.h"
+#else
+#include <kipr/botball.h>
+#endif
+#include "exmove.h"
+
 #define get_high_byte2(a) (((a)>>8)&255)
 #define get_low_byte2(a) ((a)&255)
 
@@ -114,10 +122,10 @@ void create_send(){
 	//gogo OI mode data!
 	create_write_byte(142);
 	create_write_byte(35);
-	
+
 }
 void create_recieve(){
-	
+
 	char buffer[1];
 	char *bptr = buffer;
 	create_read_block(bptr,1);
@@ -175,7 +183,7 @@ void create_lineup(){//lines up the create on a black line
 		if (lcliff < 500) lspd = -20;
 		if (rcliff > 800) rspd = 20;
 		if (rcliff < 500) rspd = -20;
-		
+
 		if (seconds()-tstart > 4){lspd/=2;rspd/=2;}
 		if (seconds()-tstart > 6){
 			create_stop();
