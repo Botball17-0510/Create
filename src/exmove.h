@@ -27,6 +27,20 @@
 #define ARM_UP 200
 
 /**
+ * @author Arjun
+ */
+#define POS_START_X 400
+#define POS_START_Y 170
+#define POS_COW_X 750
+#define POS_COW_Y 2070
+#define POS_HAY1_X 1050
+#define POS_HAY1_Y 1920
+#define POS_HAY2_X 1050
+#define POS_HAY2_Y 2070
+#define POS_HAY3_X 1050
+#define POS_HAY3_Y 2220
+
+/**
  * Structure for robot position
  */
 typedef struct {
