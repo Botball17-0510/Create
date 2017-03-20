@@ -25,6 +25,8 @@ void init() {
 	// light here
 	enable_servo(ARM_SERVO);
 	enable_servo(CLAW_SERVO);
+	RobotPos initialPos = newRobotPos(POS_START_X, POS_START_Y);
+	setRobotPos(initialPos);
 }
 
 
@@ -56,6 +58,7 @@ int main() {
 	// else if (c_button()) {
 	// 	blueCow();
 	// }
+	initialDrive();
 	farmHayBales();
 	dinit();
 	return 0;
