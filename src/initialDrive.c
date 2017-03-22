@@ -1,7 +1,9 @@
+#ifndef MINIFIED
 #include "initialDrive.h"
 #include "createDrive.h"
 
 #include "exmove.h"
+#endif
 
 void initialDrive() {
 	create_backward(20, 10);

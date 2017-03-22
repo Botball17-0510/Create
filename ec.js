@@ -1,9 +1,9 @@
-var fs = require("fs");
+/*
+ * Program for combining all code into one file in order to make it easier to
+ * copy into the wallaby.
+ */
 
-var C = {
-	STATE_NULL: 0,
-	STATE_PREPROCESER: 1
-};
+var fs = require("fs");
 
 /**
  * reads a file
@@ -14,36 +14,33 @@ function read(file) {
 	return fs.readFileSync(file, 'utf8');
 }
 
-var main_string = read('src/main.c');
+var settings = JSON.parse(read("project.json"));
 
-function lex(str) {
-	var tokens = [];
-	var token_locations = [];
-	function add_token(token, loc) {
-		tokens.push(token);
-		token_locations.push(loc);
-	}
-	var state = C.STATE_NULL;
-	var current = "";
-	for (var i = 0, len = str.length; i < len; i++) {
-		if (str[i] == '\n') {
-			state = C.STATE_NULL;
-			current = "";
-			continue;
-		}
-		if (state == C.STATE_PREPROCESER) {
-			if (str[i] == '\s') {
-				state = C.STATE_NULL;
+var file = "";
 
-			}
-			current += str[i];
+console.log("Writing head...");
+file+=settings.head;
 
-		}
-		if (str[i] == '#') {
-			state = C.STATE_PREPROCESER;
-			continue;
-		}
-	}
-
+console.log("Writing declarations...");
+for (var i in settings.declarations) {
+	var filePath = settings.declarations[i];
+	console.log("Writing declaration: " + filePath);
+	file+=read(filePath);
 }
-console.log(main_string);
+
+console.log("Writing sources...");
+for (var i in settings.sources) {
+	var filePath = settings.sources[i];
+	console.log("Writing source: " + filePath);
+	file+=read(filePath);
+}
+
+// if (!fs.exists(settings.target)) {
+// 	fs.writeFileSync(settings.target, "");
+// }
+fs.writeFile(settings.target, file, { flag: 'w' }, function (err) {
+    if (err) {
+			throw err;
+		}
+		console.log("Done!");
+});

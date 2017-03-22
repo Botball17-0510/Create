@@ -32,5 +32,10 @@ void create_stop();
 void create_drive_direct(int x, int y);
 void create_spin_CCW(int speed);
 void create_spin_CW(int speed);
+void create_write_byte(char b);
+int create_read_block(char *data, int count);
+float sin(float x);
+float cos(float x);
+float tan(float x);
 
 #endif

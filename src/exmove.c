@@ -1,3 +1,4 @@
+#ifndef MINIFIED
 #ifdef __GNUC__
 #include "kipr/botball.h"
 #else
@@ -5,11 +6,12 @@
 #endif
 #include "exmove.h"
 #include "createDrive.h"
+#endif
 
 RobotPos currentPos;
 
-void initEx(int x, int y) {
-	currentPos = newRobotPos(x, y);
+void initEx(int x, int y, int rotation) {
+	currentPos = newRobotPos(x, y, rotation);
 }
 
 void slowServo(int servo, int goal, float ms) {
@@ -44,12 +46,16 @@ void pickUpObject() {
 
 // go straight a certain distance TODO Make it more accurate
 void straight_distance(int mm, int speed) {
+	currentPos.x += mm * sin(currentPos.rotation);
+	currentPos.y += mm * cos(currentPos.rotation);
 	create_drive_straight(speed);
 	msleep((mm/speed) * 1000);
 	create_stop();
 }
 
 void reverse_distance(int mm, int speed) {
+	currentPos.x -= mm * sin(currentPos.rotation);
+	currentPos.y -= mm * cos(currentPos.rotation);
 	create_drive_straight(-speed);
 	msleep((mm/speed)*1000);
 	create_stop();
@@ -60,22 +66,22 @@ void reverse_distance(int mm, int speed) {
 void rotate(float degrees, int direction, int speed) {
     //printf("time to spin: %f\n",time);
     if (direction == LEFT) {
-        create_left(degrees, 0, speed);
+			currentPos.rotation-=degrees;
+			printf("create_left");
+      create_left(degrees, 0, speed);
     } else {
-        create_right(degrees, 0, speed);
+			currentPos.rotation+=degrees;
+			printf("create_left");
+      create_right(degrees, 0, speed);
     }
-<<<<<<< HEAD
-    //printf("sleep %f seconds\n", time);
-    msleep(time * 1000);
-    create_stop();    
-=======
->>>>>>> Fixed intti function
+
 }
 
-RobotPos newRobotPos(int x, int y) {
+RobotPos newRobotPos(int x, int y, int rotation) {
 	RobotPos pos;
 	pos.x = x;
 	pos.y = y;
+	pos.rotation = rotation;
 	return pos;
 }
 
@@ -91,15 +97,3 @@ void updateRobotPos(int x, int y) {
 void setRobotPos(RobotPos pos) {
 	currentPos = pos;
 }
-
-void robotGoto(RobotPos pos) {
-	// TODO implement function
-}
-
-void faceDirection(int direction) {
-	// TODO implement function
-}
-
-
-
-

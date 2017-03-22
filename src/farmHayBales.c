@@ -1,3 +1,4 @@
+#ifndef MINIFIED
 #include "farmHayBales.h"
 #ifdef __GNUC__
 #include "kipr/botball.h"
@@ -5,12 +6,17 @@
 #include <kipr/botball.h>
 #endif
 #include "exmove.h"
+#include "createDrive.h"
+#endif
 
-#define SPEED 10
+#define SPEED 50
 
 /**
  * Grabs the 3 haybales at the farm
  */
 void farmHayBales() {
-	rotate(90, LEFT, SPEED);
+	create_forward(1000, SPEED);
+	printf("waiting\n");
+	msleep(2000);
+	create_backward(1000, SPEED);
 }

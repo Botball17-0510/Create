@@ -1,10 +1,10 @@
-#include "farmHayBales.h"
+#ifndef MINIFIED
 #ifdef __GNUC__
 #include "kipr/botball.h"
 #else
 #include <kipr/botball.h>
 #endif
-#include "exmove.h"
+#endif
 
 #define get_high_byte2(a) (((a)>>8)&255)
 #define get_low_byte2(a) ((a)&255)
@@ -171,10 +171,10 @@ void create_off(){
 
 #define lcliff get_create_lcliff_amt(.002)
 #define rcliff get_create_rcliff_amt(.002)
+
 void create_lineup(){//lines up the create on a black line
 	int done = 0;
 	float tstart = seconds();
-	int retry = 1;//don't retry ever
 	while(done < 4){//WORK ON THIS
 		msleep(5);
 		int lspd,rspd;

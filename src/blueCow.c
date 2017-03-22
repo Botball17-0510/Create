@@ -1,3 +1,4 @@
+#ifndef MINIFIED
 #include "blueCow.h"
 #ifdef __GNUC__
 #include "kipr/botball.h"
@@ -6,6 +7,7 @@
 #endif
 #include "exmove.h"
 #include "createDrive.h"
+#endif
 
 void blueCow() {
     create_forward(1730,SPEED);
@@ -18,6 +20,6 @@ void blueCow() {
     arm(ARM_UP);
     create_right(180,RADIUS,SPEED);
     arm(ARM_DOWN);
-    claw(CLAW_OPEN):
+    claw(CLAW_OPEN);
     updateRobotPos(-510, 1730 + 340);
 }

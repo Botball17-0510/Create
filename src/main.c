@@ -3,6 +3,7 @@
 // Created by Zachary Mayhew                                 //
 // For use by botball team 17-0510                           //
 ///////////////////////////////////////////////////////////////
+#ifndef MINIFIED
 #ifdef __GNUC__
 #include "kipr/botball.h"
 #else
@@ -12,39 +13,36 @@
 #include "initialDrive.h"
 #include "farmHayBales.h"
 #include "blueCow.h"
+#endif
 
 /**
  * Initialise create and servos
- * @author Zachary Mayhew
  */
 void init() {
+	printf("coneccting to create\n");
 	// TODO Add light activate
 	create_connect();
-	msleep(1500);
-	create_start();
+	printf("connected\n");
 	// light here
 	enable_servo(ARM_SERVO);
 	enable_servo(CLAW_SERVO);
-	RobotPos initialPos = newRobotPos(POS_START_X, POS_START_Y);
-	setRobotPos(initialPos);
+
+	initEx(POS_START_X, POS_START_Y, 0);
 }
 
 
 /**
  * Deinitialize create and servos
- * @author Zachary Mayhew
  */
 void dinit() {
 	disable_servo(ARM_SERVO);
 	disable_servo(CLAW_SERVO);
 	create_disconnect();
+	printf("Done!\n");
 }
 
-/**
- * Main function
- * @author Zachary Mayhew, Bobby Wang, Arjun
- */
 int main() {
+  printf("init\n");
 	init();
 	// printf("Press A for initialDrive");
 	// printf("Press B for farmHayBales");
@@ -58,8 +56,18 @@ int main() {
 	// else if (c_button()) {
 	// 	blueCow();
 	// }
+<<<<<<< HEAD
 	initialDrive();
+=======
+	printf("Exec: initDrive\n");
+	initialDrive();
+	printf("Exec: blueCow\n");
+	blueCow();
+	printf("Exec: hay\n");
+>>>>>>> Worked on create and created minifier
 	farmHayBales();
+
+	printf("dinit\n");
 	dinit();
 	return 0;
 }

@@ -47,14 +47,18 @@
  * Structure for robot position
  */
 typedef struct {
-	float x;
-	float y;
+	int x;
+	int y;
+	int rotation;
 } RobotPos;
 
 /**
- * Initializes the move library
+ * Initializes the library
+ * @param x        starting x pos
+ * @param y        starting y pos
+ * @param rotation starting rotation
  */
-void initEx(int x, int y);
+void initEx(int x, int y, int rotation);
 
 /**
  * Moves the servo slowly
@@ -116,7 +120,7 @@ void rotate(float degrees, int direction, int speed);
  * @param  y Starting y pos
  * @return   new robot pos structure
  */
-RobotPos newRobotPos(int x, int y);
+RobotPos newRobotPos(int x, int y, int rotation);
 
 /**
  * Returns the current position of the robot
@@ -131,16 +135,5 @@ RobotPos getRobotPos();
  */
 void setRobotPos(RobotPos pos);
 
-/**
- * Goes to the specified position
- * @param  pos target position
- */
-void robotGoto(RobotPos pos);
-
-/**
- * faces the robot in the specified direction
- * @param direction [description]
- */
-void faceDirection(int direction);
 
 #endif
