@@ -27,8 +27,6 @@
 #define ARM_DOWN 2000
 #define ARM_UP 200
 
-#define SPEED 10
-
 /**
  * @author Arjun
  */
