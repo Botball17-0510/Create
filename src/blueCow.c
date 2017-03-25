@@ -21,5 +21,5 @@ void blueCow() {
     create_right(180,RADIUS,SPEED);
     arm(ARM_DOWN);
     claw(CLAW_OPEN);
-    updateRobotPos(-510, 1730 + 340);
+    //updateRobotPos(-510, 1730 + 340);
 }

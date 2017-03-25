@@ -56,15 +56,11 @@ int main() {
 	// else if (c_button()) {
 	// 	blueCow();
 	// }
-<<<<<<< HEAD
-	initialDrive();
-=======
 	printf("Exec: initDrive\n");
 	initialDrive();
 	printf("Exec: blueCow\n");
 	blueCow();
 	printf("Exec: hay\n");
->>>>>>> Worked on create and created minifier
 	farmHayBales();
 
 	printf("dinit\n");

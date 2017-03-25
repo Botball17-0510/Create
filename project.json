@@ -1,6 +1,9 @@
 {
 	"target": "out/main.c",
-	"head": "#define MINIFIED\n#include <kipr/botball.h>\n",
+	"head": [
+		"#include <kipr/botball.h>",
+		"#define MINIFED"
+	],
 	"__comment__": "Declarations are placed in order of concatination",
 	"declarations": [
 		"src/createDrive.h",

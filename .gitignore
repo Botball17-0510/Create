@@ -4,3 +4,5 @@
 *.gch
 picofeditor.png
 out/
+ec/
+*.log
