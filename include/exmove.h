@@ -27,6 +27,8 @@
 #define ARM_DOWN 2000
 #define ARM_UP 200
 
+#define SPEED 100
+
 /**
  * @author Arjun
  */
@@ -80,6 +82,10 @@ void claw(int v);
  * @author Zachary Mayhew
  */
 void arm(int v);
+
+void pick();
+
+void drop();
 
 /**
  * Picks up an object such as hay bale and puts it in the container

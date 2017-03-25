@@ -9,7 +9,7 @@
 #define get_high_byte2(a) (((a)>>8)&255)
 #define get_low_byte2(a) ((a)&255)
 
-void create_write_int(int integer)
+void create_write_int(short integer)
 {
 	create_write_byte(get_high_byte2(integer));
 	create_write_byte(get_low_byte2(integer));
@@ -87,14 +87,14 @@ void create_left(int angle, int radius, int speed)
 	}
 	create_wait_angle(angle);
 }
-void create_forward(int dist, int speed)
+void create_forward(int dist, short speed)
 {
 	create_write_byte(145);
 	create_write_int(speed);
 	create_write_int(speed);
 	create_wait_dist(dist);
 }
-void create_backward(int dist, int speed)
+void create_backward(int dist, short speed)
 {
 	create_write_byte(145);
 	create_write_int(-speed);

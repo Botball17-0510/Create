@@ -22,6 +22,10 @@ void init() {
 	printf("coneccting to create\n");
 	// TODO Add light activate
 	create_connect();
+    printf("msleep\n");
+    msleep(1500);
+    printf("start\n");
+    create_full();
 	printf("connected\n");
 	// light here
 	enable_servo(ARM_SERVO);

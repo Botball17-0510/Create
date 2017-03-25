@@ -43,13 +43,26 @@ void pickUpObject() {
 	claw(CLAW_OPEN);
 }
 
+void pick() {
+    arm(ARM_DOWN);
+    claw(CLAW_CLOSED);
+    arm(ARM_UP);
+}
+
+void drop() {
+    arm(ARM_DOWN);
+    claw(CLAW_OPEN);
+}
 
 // go straight a certain distance TODO Make it more accurate
 void straight_distance(int mm, int speed) {
 	currentPos.x += mm * sin(currentPos.rotation);
 	currentPos.y += mm * cos(currentPos.rotation);
+    printf("create_drive_straight %d\n", speed);
 	create_drive_straight(speed);
+    printf("msleep %d\n", (mm/speed) * 1000);
 	msleep((mm/speed) * 1000);
+    printf("create_stop\n");
 	create_stop();
 }
 

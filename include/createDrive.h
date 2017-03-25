@@ -20,7 +20,7 @@
 //#define get_high_byte2(a) (((a)>>8)&255)
 //#define get_low_byte2(a) ((a)&255)
 
-void create_write_int(int integer);
+void create_write_int(short integer);
 
 //this is for just good old plain scripting
 void create_wait_time(int time);//time is in deciseconds
@@ -34,8 +34,8 @@ void create_drive_direct_left(int r_speed, int l_speed, int angle);
 void create_drive_direct_right(int r_speed, int l_speed, int angle);
 void create_right(int angle, int radius, int speed);
 void create_left(int angle, int radius, int speed);
-void create_forward(int dist, int speed);
-void create_backward(int dist, int speed);
+void create_forward(int dist, short speed);
+void create_backward(int dist, short speed);
 void create_crash();
 
 void output_sen_0();

@@ -9,8 +9,6 @@
 #include "createDrive.h"
 #endif
 
-#define SPEED 50
-
 /**
  * Grabs the 3 haybales at the farm
  */

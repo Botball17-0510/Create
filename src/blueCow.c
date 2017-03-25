@@ -11,18 +11,13 @@
 
 
 void blueCow() {
-    int speed = 50;
-    int radius = 0;
-    create_forward(1730,speed);
-    create_right(90,radius,speed);
-    create_forward(510,speed);
-    create_left(90,radius,speed);
-    create_forward(340,speed);
-    arm(ARM_DOWN);
-    claw(CLAW_CLOSED);
-    arm(ARM_UP);
-    create_right(180,radius,speed);
-    arm(ARM_DOWN);
-    claw(CLAW_OPEN);
+    straight_distance(1730,SPEED);
+    create_right(90,RADIUS,SPEED);
+    straight_distance(510,SPEED);
+    create_left(90,RADIUS,SPEED);
+    straight_distance(340,SPEED);
+    pick();
+    create_right(180,RADIUS,SPEED);
+    drop();
     //updateRobotPos(-510, 1730 + 340);
 }
