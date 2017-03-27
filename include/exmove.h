@@ -46,6 +46,13 @@
 #define SPEED 50
 
 /**
+ * @author Bobby
+ */
+#define ARM_X 250
+#define ARM_Y 110
+
+
+/**
  * Structure for robot position
  */
 typedef struct {
