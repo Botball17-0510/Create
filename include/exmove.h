@@ -14,8 +14,8 @@
 #define PI 3.141592f
 
 // distance between the two wheels
-#define DIAMETER 249.0f
-#define RADIUS (249.0f/2.0f)
+#define DIAMETER 250.0f
+#define RADIUS (250.0f/2.0f)
 #define CIRCUMFERENCE DIAMETER*PI
 
 #define ARM_SERVO 1

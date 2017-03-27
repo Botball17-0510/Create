@@ -11,11 +11,11 @@
 
 
 void blueCow() {
-    straight_distance(1730,SPEED);
+    straight_distance(POS_START_Y - DIAMETER - RADIUS,SPEED);
     create_right(90,RADIUS,SPEED);
-    straight_distance(510,SPEED);
+    straight_distance(ARM_X,SPEED);
     create_left(90,RADIUS,SPEED);
-    straight_distance(340,SPEED);
+    straight_distance(DIAMETER - ARM_Y,SPEED);
     pick();
     create_right(180,RADIUS,SPEED);
     drop();
