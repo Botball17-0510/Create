@@ -7,8 +7,13 @@
 
 void initialDrive() {
 	pickUpObject();
-	create_left(90, 0, DIAMETER/2.0F);
-	straight_distance(310, SPEED);
-	create_right(90, 0, DIAMETER/2.0F);
+  	msleep(500);
+  	claw(CLAW_CLOSED);
+  	reverse_distance(100, SPEED);
+  	straight_distance(50, SPEED);
+	create_left(90, 0, SPEED);
+  	//reverse_distance(POS_START_X+200, SPEED);
+	straight_distance(POS_COW_X-POS_START_X, SPEED);
+	create_right(90, 0, SPEED);
 	updateRobotPos(310, 0);
 }

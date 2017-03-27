@@ -1,4 +1,4 @@
-\\#ifndef MINIFIED
+#ifndef MINIFIED
 #include "blueCow.h"
 #ifdef __GNUC__
 #include "kipr/botball.h"
