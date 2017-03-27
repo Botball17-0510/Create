@@ -2,7 +2,7 @@
 	"target": "out/main.c",
 	"head": [
 		"#include <kipr/botball.h>",
-		"#define MINIFED"
+		"#define MINIFIED"
 	],
 	"__comment__": "Declarations are placed in order of concatination",
 	"declarations": [

@@ -43,6 +43,8 @@
 #define POS_HAY3_X 1050
 #define POS_HAY3_Y 2220
 
+#define SPEED 50
+
 /**
  * Structure for robot position
  */

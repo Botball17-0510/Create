@@ -77,17 +77,16 @@ void reverse_distance(int mm, int speed) {
 // Rotate by a given degree, in the given direction, at the given speed.
 // todo: make it more accurate
 void rotate(float degrees, int direction, int speed) {
-    //printf("time to spin: %f\n",time);
+    float distance = ((degrees/360) * CIRCUMFERENCE);
     if (direction == LEFT) {
 			currentPos.rotation-=degrees;
-			printf("create_left");
-      create_left(degrees, 0, speed);
+			create_spin_CCW(speed);
     } else {
 			currentPos.rotation+=degrees;
-			printf("create_left");
-      create_right(degrees, 0, speed);
+			create_spin_CW(speed);
     }
-
+		msleep((distance/speed)*1000);
+		create_stop();
 }
 
 RobotPos newRobotPos(int x, int y, int rotation) {
