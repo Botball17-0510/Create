@@ -13,6 +13,10 @@
  * Grabs the 3 haybales at the farm
  */
 void farmHayBales() {
-	straight_distance(100, SPEED);
-	create_left(90, LEFT, SPEED);
+
+	create_right(90, 0, SPEED);
+	straight_distance(500, SPEED);
+	create_right(90, 0, SPEED);
+	straight_distance(200, SPEED);
+	
 }
