@@ -35,7 +35,7 @@
 #define POS_START_X 400
 #define POS_START_Y 170
 #define POS_COW_X 750
-#define POS_COW_Y 207
+#define POS_COW_Y 2070
 #define POS_HAY1_X 1050
 #define POS_HAY1_Y 1920
 #define POS_HAY2_X 1050
