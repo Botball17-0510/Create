@@ -22,6 +22,8 @@ void long_distance(int distance, int speed) {
 	
 }
 
+// void straight. It uses create_drive_direct
+
 void blueCow() {
     long_distance(POS_START_Y - DIAMETER - BACK_Y,SPEED);
     create_right(90,RADIUS,SPEED);
