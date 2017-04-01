@@ -35,7 +35,7 @@
 #define POS_START_X 400
 #define POS_START_Y 170
 #define POS_COW_X 750
-#define POS_COW_Y 2070
+#define POS_COW_Y 207
 #define POS_HAY1_X 1050
 #define POS_HAY1_Y 1920
 #define POS_HAY2_X 1050
@@ -126,6 +126,14 @@ void reverse_distance(int mm, int speed);
  * @param speed     speed to move
  * @author Bobby Wang
  */
+
+/**
+ * FOOOLS ASLKDFJLSKDFJLSKADFJLK S
+ * STOP USING DRIVE_STRAIGHT
+ * USE THAT THING THAT U USE
+ *CREATE_DRIVE_DIRECT [Not in caps]
+ */
+
 void rotate(float degrees, int direction, int speed);
 
 /**
