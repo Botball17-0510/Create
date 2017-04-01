@@ -12,12 +12,14 @@
 void long_distance(int distance, int speed) {
 	int short_distance = 500;
 	set_create_distance(0);
-	/*
-	while (we haven't moved distance yet) {
-	   straight_distance(short distance, speed);
+
+	while create_distance = 0 {
+	   straight_distance(short_distance, speed);
        int current =  get_create_distance();
+			 updateRobotPos(current);
+			 msleep(10);
     }
-	*/
+	
 }
 
 void blueCow() {
