@@ -27,11 +27,13 @@ void slowServo(int servo, int goal, float ms) {
 
 void claw(int v) {
 	// slowServo(CLAW_SERVO, v, speed);
+    printf("claw %d\n", v);
   	set_servo_position(CLAW_SERVO, v);
   	msleep(500);
 }
 
 void arm(int v) {
+    printf("arm %d\n", v);
 	set_servo_position(ARM_SERVO, v);
     msleep(1000);
 }

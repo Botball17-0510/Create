@@ -31,13 +31,28 @@ void long_distance(int distance, int speed) {
 
 void blueCow() {
     arm(ARM_UP);
-    create_forward(POS_COW_Y - DIAMETER - BACK_Y, HIGH_SPEED);
+    msleep(1000);
+    create_drive_direct_dist(SPEED * 1.04, SPEED * 0.96, POS_COW_Y - DIAMETER - BACK_Y);
+    create_block();
+    msleep(1000);
     create_right(90,RADIUS,SPEED);
-    straight_distance(ARM_X,SPEED);
+    create_block();
+    msleep(1000);
+    create_forward(ARM_X,SPEED);
+    create_block();
+    msleep(1000);
     create_left(90,RADIUS,SPEED);
-    straight_distance(DIAMETER - ARM_Y,SPEED);
+    create_block();
+    msleep(1000);
+    create_forward(DIAMETER - ARM_Y,SPEED);
+    create_block();
+    msleep(1000);
     pick();
+    create_block();
+    msleep(1000);
     create_right(180,RADIUS,SPEED);
+    create_block();
+    msleep(1000);
     drop();
     //updateRobotPos(-510, 1730 + 340);
 }

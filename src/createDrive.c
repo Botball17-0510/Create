@@ -46,6 +46,7 @@ void create_wait_event(int event)//see #defines for possible answers.  Use 255-e
 
 void create_drive_direct_dist(int r_speed, int l_speed, int dist)
 {
+    printf("drive direct %d %d %d\n", r_speed, l_speed, dist);
 	create_write_byte(145);
 	create_write_int(r_speed);
 	create_write_int(l_speed);
@@ -67,6 +68,7 @@ void create_drive_direct_right(int r_speed, int l_speed, int angle)
 }
 void create_right(int angle, int radius, int speed)
 {
+    printf("turn right %d %d %d\n", angle, radius, speed);
 	create_write_byte(137);
 	create_write_int(speed);
 	if (radius == 0){
@@ -78,6 +80,7 @@ void create_right(int angle, int radius, int speed)
 }
 void create_left(int angle, int radius, int speed)
 {
+    printf("turn left %d %d %d\n", angle, radius, speed);
 	create_write_byte(137);
 	create_write_int(speed);
 	if (radius == 0){
@@ -89,9 +92,10 @@ void create_left(int angle, int radius, int speed)
 }
 void create_forward(int dist, short speed)
 {
+	printf("forward %d %d\n", dist, speed);
 	create_write_byte(145);
-	create_write_int(speed * 1.1);
-	create_write_int(speed * 0.9);
+	create_write_int(speed);
+	create_write_int(speed);
 	create_wait_dist(dist);
 }
 void create_backward(int dist, short speed)

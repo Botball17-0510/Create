@@ -25,13 +25,14 @@ void init() {
     printf("msleep\n");
     msleep(1500);
     printf("start\n");
-    create_full();
+    create_safe();
 	printf("connected\n");
 	// light here
 	enable_servo(ARM_SERVO);
 	enable_servo(CLAW_SERVO);
 
 	initEx(POS_START_X, POS_START_Y, 0);
+    arm(ARM_UP);
 }
 
 
