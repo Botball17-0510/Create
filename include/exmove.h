@@ -28,6 +28,7 @@
 #define ARM_UP 200
 
 #define SPEED 100
+#define HIGH_SPEED 200
 
 /**
  * @author Arjun
@@ -42,8 +43,6 @@
 #define POS_HAY2_Y 2070
 #define POS_HAY3_X 1050
 #define POS_HAY3_Y 2220
-
-#define SPEED 50
 
 /**
  * @author Bobby
