@@ -59,9 +59,9 @@ void straight_distance(int mm, int speed) {
 	currentPos.x += mm * sin(currentPos.rotation);
 	currentPos.y += mm * cos(currentPos.rotation);
     printf("create_drive_straight %d\n", speed);
-	create_drive_straight(speed);
-    printf("msleep %d\n", (mm/speed) * 1000);
-	msleep((mm/speed) * 1000);
+	create_drive_direct(speed * 1.1, speed * 0.9);
+    printf("msleep %d\n", mm * 1000 / speed);
+	msleep(mm * 1000 / speed);
     printf("create_stop\n");
 	create_stop();
 }

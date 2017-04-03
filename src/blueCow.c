@@ -30,6 +30,7 @@ void long_distance(int distance, int speed) {
 // void straight. It uses create_drive_direct
 
 void blueCow() {
+    arm(ARM_UP);
     create_forward(POS_COW_Y - DIAMETER - BACK_Y, HIGH_SPEED);
     create_right(90,RADIUS,SPEED);
     straight_distance(ARM_X,SPEED);

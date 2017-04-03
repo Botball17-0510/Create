@@ -90,8 +90,8 @@ void create_left(int angle, int radius, int speed)
 void create_forward(int dist, short speed)
 {
 	create_write_byte(145);
-	create_write_int(speed);
-	create_write_int(speed);
+	create_write_int(speed * 1.1);
+	create_write_int(speed * 0.9);
 	create_wait_dist(dist);
 }
 void create_backward(int dist, short speed)
