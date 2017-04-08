@@ -24,7 +24,7 @@ void long_distance(int distance, int speed) {
        remaining_distance = distance - current;
 	   msleep(1000);
     }
-	
+
 }
 
 // void straight. It uses create_drive_direct

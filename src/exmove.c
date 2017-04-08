@@ -14,15 +14,19 @@ void initEx(int x, int y, int rotation) {
 	currentPos = newRobotPos(x, y, rotation);
 }
 
-void slowServo(int servo, int goal, float ms) {
-    int start = get_servo_position(servo);
-   	float trueMs = ms/(goal-start);
-   	printf("%f", trueMs);
-  	int i = start;
-   	for (; i < goal; i++) {
-   		set_servo_position(servo, i);
-   		msleep(trueMs);
-   	}
+void slowServo(int servo, int goal, int milliseconds) {
+    int startPos = get_servo_position(servo);
+    int goalRelative = goal - startPos;
+    // how far to move the servo every time
+    float oneMove = (float)(goalRelative) / (milliseconds / 5.0); // 5 ms delay
+    //                      ^-- delta        ^-- number of loops
+
+    float pos;
+    for (pos = 0; fabsf(pos) < abs(goalRelative); pos += oneMove) {
+        set_servo_position(servo, (int)(pos + startPos));
+        msleep(5);
+    }
+    set_servo_position(servo, goal);
 }
 
 void claw(int v) {
@@ -39,9 +43,12 @@ void arm(int v) {
 }
 
 void pickUpObject() {
-	arm(ARM_DOWN);
-	claw(CLAW_CLOSED);
-	arm(ARM_UP);
+	claw(CLAW_OPEN);
+  	slowServo(ARM_SERVO, ARM_DOWN, 1000);
+  	msleep(300);
+	slowServo(CLAW_SERVO, CLAW_CLOSED, 1000);
+	slowServo(ARM_SERVO, ARM_UP, 1000);
+  	msleep(300);
 	claw(CLAW_OPEN);
 }
 

@@ -69,14 +69,7 @@ typedef struct {
  */
 void initEx(int x, int y, int rotation);
 
-/**
- * Moves the servo slowly
- * @param servo servo port
- * @param goal  goal for servo
- * @param ms    time it should take
- * @author Zachary Mayhew
- */
-void slowServo(int servo, int goal, float ms);
+void slowServo(int servo, int goal, int milliseconds);
 
 /**
  * Sets the position of the claw

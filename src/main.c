@@ -1,6 +1,5 @@
 ///////////////////////////////////////////////////////////////
 // main.c                                                    //
-// Created by Zachary Mayhew                                 //
 // For use by botball team 17-0510                           //
 ///////////////////////////////////////////////////////////////
 #ifndef MINIFIED
@@ -23,16 +22,18 @@ void init() {
 	// TODO Add light activate
 	create_connect();
     printf("msleep\n");
-    msleep(1500);
+    //msleep(1500);
     printf("start\n");
     create_safe();
 	printf("connected\n");
 	// light here
+    set_servo_position(ARM_SERVO, ARM_UP);
+    set_servo_position(CLAW_SERVO, CLAW_CLOSED);    //set starting values
 	enable_servo(ARM_SERVO);
 	enable_servo(CLAW_SERVO);
 
 	initEx(POS_START_X, POS_START_Y, 0);
-    arm(ARM_UP);
+    //arm(ARM_UP);
 }
 
 
@@ -40,8 +41,9 @@ void init() {
  * Deinitialize create and servos
  */
 void dinit() {
-	disable_servo(ARM_SERVO);
-	disable_servo(CLAW_SERVO);
+	//disable_servo(ARM_SERVO);
+	//disable_servo(CLAW_SERVO);
+    disable_servos();   //Disable all servos - make sure you are not DQed
 	create_disconnect();
 	printf("Done!\n");
 }
@@ -49,18 +51,7 @@ void dinit() {
 int main() {
   printf("init\n");
 	init();
-	// printf("Press A for initialDrive");
-	// printf("Press B for farmHayBales");
-	// printf("Press C for blueCow");
-	// if (a_button()) {
-	// 	initialDrive();
-	// }
-	// else if (b_button()) {
-	// 	farmHayBales();
-	// }
-	// else if (c_button()) {
-	// 	blueCow();
-	// }
+
 	printf("Exec: initDrive\n");
 	initialDrive();
 	printf("Exec: blueCow\n");
