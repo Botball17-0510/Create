@@ -47,9 +47,10 @@ void pickUpObject() {
   	slowServo(ARM_SERVO, ARM_DOWN, 1000);
   	msleep(300);
 	slowServo(CLAW_SERVO, CLAW_CLOSED, 1000);
-	slowServo(ARM_SERVO, ARM_UP, 1000);
+  	set_servo_position(ARM_SERVO, ARM_UP);
+	//slowServo(ARM_SERVO, ARM_UP, 1000);
   	msleep(300);
-	claw(CLAW_OPEN);
+	slowServo(CLAW_SERVO, CLAW_OPEN, 500);
 }
 
 void pick() {
