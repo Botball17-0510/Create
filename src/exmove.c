@@ -42,15 +42,17 @@ void arm(int v) {
     msleep(1000);
 }
 
-void pickUpObject() {
-	claw(CLAW_OPEN);
+void pickUpObject(int wide) {
+	claw(CLAW_OPEN - wide);
   	slowServo(ARM_SERVO, ARM_DOWN, 1000);
   	msleep(300);
 	slowServo(CLAW_SERVO, CLAW_CLOSED, 1000);
-  	set_servo_position(ARM_SERVO, ARM_UP);
-	//slowServo(ARM_SERVO, ARM_UP, 1000);
-  	msleep(300);
-	slowServo(CLAW_SERVO, CLAW_OPEN, 500);
+	slowServo(ARM_SERVO, ARM_UP, 1000);
+  	msleep(1000);	//arm shakes
+  	set_servo_position(CLAW_SERVO, CLAW_OPEN);
+	//slowServo(CLAW_SERVO, CLAW_OPEN, 1000);
+  	msleep(500);
+  	set_servo_position(CLAW_SERVO, CLAW_CLOSED);
 }
 
 void pick() {

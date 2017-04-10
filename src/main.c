@@ -1,5 +1,5 @@
 ///////////////////////////////////////////////////////////////
-// main.c                                                    //
+// main.c                             //
 // For use by botball team 17-0510                           //
 ///////////////////////////////////////////////////////////////
 #ifndef MINIFIED
@@ -18,13 +18,13 @@
  * Initialise create and servos
  */
 void init() {
-	printf("coneccting to create\n");
+	printf("Conecting to Create\n");
 	// TODO Add light activate
 	create_connect();
     printf("msleep\n");
     //msleep(1500);
     printf("start\n");
-    create_safe();
+    create_full();
 	printf("connected\n");
 	// light here
     set_servo_position(ARM_SERVO, ARM_UP);
@@ -49,15 +49,17 @@ void dinit() {
 }
 
 int main() {
-  printf("init\n");
+  	printf("init\n");
 	init();
 
 	printf("Exec: initDrive\n");
 	initialDrive();
 	printf("Exec: blueCow\n");
 	blueCow();
+  	/*
 	printf("Exec: hay\n");
 	farmHayBales();
+    */
 
 	printf("dinit\n");
 	dinit();
