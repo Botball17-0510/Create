@@ -28,11 +28,4 @@ void initialDrive() {
   	create_backward(50, 30);	//square up
   	create_wait_time(5);
     create_block();
-
-<<<<<<< HEAD
-=======
-  	//reverse_distance(50, SPEED);
-	//updateRobotPos(310, 0);
-
->>>>>>> origin/master
 }
