@@ -30,18 +30,22 @@ void long_distance(int distance, int speed) {
 // void straight. It uses create_drive_direct
 
 void blueCow() {
-    create_forward(POS_COW_Y - DIAMETER - BACK_Y, SPEED); //create_drive_direct_dist(SPEED * 1.04, SPEED * 0.96, POS_COW_Y - DIAMETER - BACK_Y);
-    create_wait_time(5);
-    create_right(40, 0, SPEED);	//arm towards blue cow
+    create_forward(700, SPEED); //create_drive_direct_dist(SPEED * 1.04, SPEED * 0.96, POS_COW_Y - DIAMETER - BACK_Y);
+    create_right(4, 0, SPEED);
+  	create_forward(765, SPEED);
+  	create_wait_time(5);
+    create_right(50, 0, SPEED);	//arm towards blue cow
   	create_block();
 
-  	set_servo_position(CLAW_SERVO, CLAW_OPEN);
+  	set_servo_position(CLAW_SERVO, CLAW_OPEN);	//pick up blue cow
   	slowServo(ARM_SERVO, ARM_DOWN, 1000);
   	msleep(300);
 	slowServo(CLAW_SERVO, CLAW_CLOSED - 200, 1000);	//closing on horizontal blue cow, wider claw opening
   	set_servo_position(ARM_SERVO, ARM_DOWN - 500);	//lifted arm position
 
-    create_right(90, 0, 30);	//turn towards barn
+    create_right(20, 0, 30);	//turn towards barn
+  	create_forward(30, SPEED);
+  	create_right(30, 0, 30);
   	create_block();
   	slowServo(ARM_SERVO, ARM_DOWN, 500);
   	set_servo_position(CLAW_SERVO, CLAW_OPEN);
