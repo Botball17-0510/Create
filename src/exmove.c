@@ -79,10 +79,13 @@ void straight_distance(int mm, int speed) {
 }
 
 void reverse_distance(int mm, int speed) {
-	currentPos.x -= mm * sin(currentPos.rotation);
-	currentPos.y -= mm * cos(currentPos.rotation);
+	currentPos.x += mm * sin(currentPos.rotation);
+	currentPos.y += mm * cos(currentPos.rotation);
+    //printf("create_drive_straight %d\n", speed);
 	create_drive_straight(-speed);
-	msleep((mm/speed)*1000);
+    //printf("msleep %d\n", (mm/speed) * 1000);
+	msleep((mm/speed) * 1000);
+    //printf("create_stop\n");
 	create_stop();
 }
 

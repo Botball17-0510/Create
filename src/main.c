@@ -2,17 +2,12 @@
 // main.c                             //
 // For use by botball team 17-0510                           //
 ///////////////////////////////////////////////////////////////
-#ifndef MINIFIED
-#ifdef __GNUC__
-#include "kipr/botball.h"
-#else
+
 #include <kipr/botball.h>
-#endif
 #include "exmove.h"
 #include "initialDrive.h"
 #include "farmHayBales.h"
 #include "blueCow.h"
-#endif
 
 /**
  * Initialise create and servos
@@ -34,6 +29,7 @@ void init() {
 
 	initEx(POS_START_X, POS_START_Y, 0);
     //arm(ARM_UP);
+
 }
 
 

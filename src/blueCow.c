@@ -1,10 +1,6 @@
 #ifndef MINIFIED
 #include "blueCow.h"
-#ifdef __GNUC__
-#include "kipr/botball.h"
-#else
 #include <kipr/botball.h>
-#endif
 #include "exmove.h"
 #include "createDrive.h"
 #endif
