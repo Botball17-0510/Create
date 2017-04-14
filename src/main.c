@@ -9,6 +9,8 @@
 #include "farmHayBales.h"
 #include "blueCow.h"
 
+#define HAY_TEST // NOTE MAKE SURE THAT IF YOU ARE TESTING SOMETHING OTHER THAN HAY TO COMMENT THIS OUT
+
 /**
  * Initialise create and servos
  */
@@ -24,8 +26,10 @@ void init() {
 	// light here
     set_servo_position(ARM_SERVO, ARM_UP);
     set_servo_position(CLAW_SERVO, CLAW_CLOSED);    //set starting values
-	enable_servo(ARM_SERVO);
+
+  enable_servo(ARM_SERVO);
 	enable_servo(CLAW_SERVO);
+
 
 	initEx(POS_START_X, POS_START_Y, 0);
     //arm(ARM_UP);
@@ -47,15 +51,15 @@ void dinit() {
 int main() {
   	printf("init\n");
 	init();
-
+#ifndef HAY_TEST
 	printf("Exec: initDrive\n");
 	initialDrive();
 	printf("Exec: blueCow\n");
-	blueCow();
-  	/*
+	blueCowf();
+#endif
 	printf("Exec: hay\n");
 	farmHayBales();
-    */
+
 
 	printf("dinit\n");
 	dinit();
