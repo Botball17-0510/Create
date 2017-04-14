@@ -30,34 +30,31 @@ void long_distance(int distance, int speed) {
 // void straight. It uses create_drive_direct
 
 void blueCow() {
-    create_forward(1300, SPEED + 20); //create_drive_direct_dist(SPEED * 1.04, SPEED * 0.96, POS_COW_Y - DIAMETER - BACK_Y);
+  	create_forward(700, SPEED * 2);
+  	create_left(2, 0, SPEED);	//adjust for right veering of robot
+  	create_forward(700, SPEED * 2); //create_drive_direct_dist(SPEED * 1.04, SPEED * 0.96, POS_COW_Y - DIAMETER - BACK_Y);
   	create_right(90, 0, SPEED);
   	create_backward(250, SPEED);
-  	create_backward(30, 30);	//square up
-  	create_forward(200, SPEED);
+  	create_backward(30, SPEED);	//square up
+  	create_forward(180, SPEED);
   	create_left(80, 0, SPEED);
-  	create_forward(250, SPEED);	//drive next to blue cow
-  	create_right(20, 0, SPEED);
+  	create_forward(250, SPEED * 2);	//drive next to blue cow
   	create_block();
 
   	set_servo_position(CLAW_SERVO, CLAW_CLOSED);	//pick up blue cow
   	slowServo(ARM_SERVO, ARM_DOWN, 1000);
   	msleep(500);
-  	create_right(90, 0, SPEED);
+  	create_forward(100, SPEED);
+  	create_right(40, 0, SPEED);
+  	create_forward(70, SPEED);
+  	create_right(80, 0, SPEED);
+  	create_forward(100, SPEED);
+  	create_left(50, 0, SPEED);
+  	create_backward(50, SPEED);
   	create_block();
-  /*
-  	set_servo_position(CLAW_SERVO, CLAW_OPEN);	//pick up blue cow
-  	slowServo(ARM_SERVO, ARM_DOWN, 1000);
-  	msleep(300);
-	slowServo(CLAW_SERVO, CLAW_CLOSED - 200, 1000);	//closing on horizontal blue cow, wider claw opening
-  	set_servo_position(ARM_SERVO, ARM_DOWN - 500);	//lifted arm position
 
-    create_right(20, 0, 30);	//turn towards barn
-  	create_forward(90, SPEED);
-  	create_right(30, 0, 30);
-  	create_block();
-  	slowServo(ARM_SERVO, ARM_DOWN, 500);
-  	set_servo_position(CLAW_SERVO, CLAW_OPEN);
   	slowServo(ARM_SERVO, ARM_UP, 1000);
-    */
+  	msleep(500);
+  	create_right(100, 0, SPEED);
+  	create_block();
 }
