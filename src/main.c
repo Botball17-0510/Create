@@ -51,14 +51,14 @@ void dinit() {
 int main() {
   	printf("init\n");
 	init();
-
+/*
 #ifndef HAY_TEST
 	printf("Exec: initDrive\n");
 	initialDrive();
 	printf("Exec: blueCow\n");
 	blueCow();
 #endif
-
+*/
 	printf("Exec: hay\n");
 	farmHayBales();
 

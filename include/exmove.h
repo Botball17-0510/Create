@@ -21,7 +21,7 @@
 #define ARM_SERVO 1
 #define CLAW_SERVO 0
 
-#define CLAW_CLOSED 925
+#define CLAW_CLOSED 900
 #define CLAW_OPEN 450
 
 #define ARM_DOWN 2000
@@ -88,6 +88,8 @@ void arm(int v);
 void pick();
 
 void drop();
+
+void pickUpObjectA(int wide, int depth);
 
 /**
  * Picks up an object such as hay bale and puts it in the container

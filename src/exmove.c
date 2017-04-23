@@ -53,10 +53,8 @@ void pickUpObjectA(int wide, int depth) {
 	slowServo(CLAW_SERVO, CLAW_CLOSED, 1000);
 	slowServo(ARM_SERVO, ARM_UP, 1000);
   	msleep(1000);	//arm shakes
-  	set_servo_position(CLAW_SERVO, CLAW_OPEN);
-	//slowServo(CLAW_SERVO, CLAW_OPEN, 1000);
+    claw(CLAW_OPEN - wide);
   	msleep(500);
-  	set_servo_position(CLAW_SERVO, CLAW_CLOSED);
 }
 
 void pick() {
