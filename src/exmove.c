@@ -43,7 +43,11 @@ void arm(int v) {
 }
 
 void pickUpObject(int wide) {
-	claw(CLAW_OPEN - wide);
+	pickUpObjectA(wide, 0);
+}
+
+void pickUpObjectA(int wide, int depth) {
+  claw(CLAW_OPEN - wide);
   	slowServo(ARM_SERVO, ARM_DOWN, 1000);
   	msleep(300);
 	slowServo(CLAW_SERVO, CLAW_CLOSED, 1000);

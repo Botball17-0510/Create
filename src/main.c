@@ -9,7 +9,7 @@
 #include "farmHayBales.h"
 #include "blueCow.h"
 
-#define HAY_TEST // NOTE MAKE SURE THAT IF YOU ARE TESTING SOMETHING OTHER THAN HAY TO COMMENT THIS OUT
+//#define HAY_TEST // NOTE MAKE SURE THAT IF YOU ARE TESTING SOMETHING OTHER THAN HAY TO COMMENT THIS OUT
 
 /**
  * Initialise create and servos
@@ -51,12 +51,14 @@ void dinit() {
 int main() {
   	printf("init\n");
 	init();
+
 #ifndef HAY_TEST
 	printf("Exec: initDrive\n");
 	initialDrive();
 	printf("Exec: blueCow\n");
-	blueCowf();
+	blueCow();
 #endif
+
 	printf("Exec: hay\n");
 	farmHayBales();
 

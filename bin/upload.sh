@@ -1,12 +1,13 @@
 #!/bin/bash
 
-if [ $# -ne 1 ]; then
-  echo "Usage $0 <project name>"
-  exit 0;
+path=a/b
+
+if [ $# -eq 1 ]; then
+  path=$1
 fi
 
-scp -r include root@192.168.125.1:"Documents/KISS/Default\ User/$1/"
-scp -r src root@192.168.125.1:"Documents/KISS/Default\ User/$1/"
+scp -r include root@192.168.125.1:"Documents/KISS/$path/"
+scp -r src root@192.168.125.1:"Documents/KISS/$path/"
 
 exit 0;
 

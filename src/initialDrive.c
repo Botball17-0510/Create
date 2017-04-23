@@ -17,7 +17,7 @@ void initialDrive() {
   	create_forward(10, 50);
   	create_wait_time(5);
   	create_left(35, 0, SPEED);
-	create_left(35, 0, 50);	//goes slower in order to get the box over the ramp
+	create_left(40, 0, 50);	//goes slower in order to get the box over the ramp
   	create_wait_time(5);
   	
   	create_forward(150, SPEED * 2);

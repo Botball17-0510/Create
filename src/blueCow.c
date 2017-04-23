@@ -50,11 +50,11 @@ void blueCow() {
   	create_right(80, 0, SPEED);
   	create_forward(100, SPEED);
   	create_left(50, 0, SPEED);
-  	create_backward(50, SPEED);
+  	create_backward(90, SPEED);
   	create_block();
 
   	slowServo(ARM_SERVO, ARM_UP, 1000);
   	msleep(500);
-  	create_right(100, 0, SPEED);
+  	create_right(90, 0, SPEED);
   	create_block();
 }
