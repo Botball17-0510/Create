@@ -9,6 +9,7 @@
 void initialDrive() {
 	pickUpObject(100);
   	msleep(500);
+	slowServo(CLAW_SERVO, CLAW_CLOSED, 1000);
   	//square up
   	create_backward(45, 50);
     create_wait_time(10);

@@ -46,9 +46,9 @@ void farmHayBales() {
   create_block();
   pickUpObject(0);
 
+  create_right(1, 0, SPEED);
   int i;
   for (i = 0; i < 2; i ++){
-    create_right(1, 0, SPEED);
     create_forward(180, SPEED);
     create_block();
     pickUpObject(0);
@@ -56,9 +56,9 @@ void farmHayBales() {
 
   create_forward(90, SPEED);
   for (i = 0; i < 5; i ++){
+    pickUpObject(0);
     create_backward(90, SPEED);
     create_block();
-    pickUpObject(0);
   }
 
   //////////////////////////////////////////////////////////////////////////////
