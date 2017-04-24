@@ -49,8 +49,12 @@ void dinit() {
 }
 
 int main() {
+  
   	printf("init\n");
 	init();
+  
+    wait_for_light(0);
+
 #ifndef HAY_TEST
 	printf("Exec: initDrive\n");
 	initialDrive();
@@ -65,3 +69,4 @@ int main() {
 	dinit();
 	return 0;
 }
+

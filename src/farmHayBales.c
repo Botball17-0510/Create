@@ -17,7 +17,7 @@ void marker(int n) {
 void farmHayBales() {
   // marker(1);
 
-  marker(-2);
+  marker(2);
   create_backward(700, HIGH_SPEED); // marker 2
   create_block();
   
@@ -34,7 +34,7 @@ void farmHayBales() {
   create_block();
 
   marker(6);
-  create_forward(150, SPEED); // marker 6
+  create_forward(140, SPEED); // marker 6
   create_block();
 
   marker(7);
@@ -42,19 +42,18 @@ void farmHayBales() {
   create_block();
 
   marker(8);
-  create_forward(260, SPEED); // marker 8
+  create_forward(250, SPEED); // marker 8
   create_block();
   pickUpObject(0);
 
-  create_right(1, 0, SPEED);
   int i;
   for (i = 0; i < 2; i ++){
     create_forward(180, SPEED);
     create_block();
     pickUpObject(0);
   }
-
-  create_forward(90, SPEED);
+  create_forward(15, SPEED);
+  
   for (i = 0; i < 5; i ++){
     pickUpObject(0);
     create_backward(90, SPEED);
