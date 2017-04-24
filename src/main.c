@@ -54,6 +54,8 @@ int main() {
 	init();
   
     wait_for_light(0);
+    shut_down_in(119);
+    create_start();
 
 #ifndef HAY_TEST
 	printf("Exec: initDrive\n");
