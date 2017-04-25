@@ -36,7 +36,7 @@ void blueCow() {
   	create_right(90, 0, SPEED);
   	create_backward(250, SPEED);
   	create_backward(30, SPEED);	//square up
-  	create_forward(180, SPEED);
+  	create_forward(190, SPEED);
   	create_left(80, 0, SPEED);
   	create_forward(250, SPEED * 2);	//drive next to blue cow
   	create_block();

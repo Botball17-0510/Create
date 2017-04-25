@@ -34,7 +34,7 @@ void farmHayBales() {
   create_block();
 
   marker(6);
-  create_forward(140, SPEED); // marker 6
+  create_forward(150, SPEED); // marker 6
   create_block();
 
   marker(7);
@@ -42,10 +42,11 @@ void farmHayBales() {
   create_block();
 
   marker(8);
-  create_forward(250, SPEED); // marker 8
+  create_forward(260, SPEED); // marker 8
   create_block();
   pickUpObject(0);
 
+  create_right(1, 0, SPEED);
   int i;
   for (i = 0; i < 2; i ++){
     create_forward(180, SPEED);
@@ -53,26 +54,13 @@ void farmHayBales() {
     pickUpObject(0);
   }
   
-  set_create_distance(0);
-  printf("to move distance: %d\n", 15);
-  create_forward(90, SPEED);
-  create_block();
-  printf("moved distance: %d\n", get_create_distance());
-  pickUpObject(100);
-  
-  for (i = 0; i < 2; i ++){
-    create_backward(180, SPEED);
-    create_block();
-    pickUpObject(100);
-  }
-
   //////////////////////////////////////////////////////////////////////////////
   // Finished hay bale portion move over peoples                              //
   //////////////////////////////////////////////////////////////////////////////
 
   // This is simple enough to not need the markers
-  create_forward(200, SPEED);
+  create_backward(100, SPEED);
   create_right(90, 0, SPEED);
-  create_forward(550, SPEED);
+  create_forward(600, SPEED);
   create_block();
 }
