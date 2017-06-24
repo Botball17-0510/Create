@@ -1,6 +1,6 @@
 #!/bin/bash
 
-path="Default\ User/gcer2017"
+path="Default\ User/gcer\ 2017"
 
 if [ $# -eq 2 ]; then
   path=$2
